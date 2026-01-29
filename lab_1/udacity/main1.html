@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Properties Demo</title>
+
+<style>
+
+/* ===== BODY STYLES ===== */
+body {
+    background-color: rgb(220, 230, 240); /* Sets background color */
+    color: #333; /* Sets text color */
+    font-family: Arial, sans-serif; /* Sets font family */
+    line-height: 1.6; /* Sets line spacing */
+    letter-spacing: 1px; /* Space between letters */
+    word-spacing: 2px; /* Space between words */
+    white-space: normal; /* Normal text wrapping */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    width: 90%; /* Element width */
+    max-width: 1200px; /* Maximum width */
+    min-width: 300px; /* Minimum width */
+    margin: 20px auto; /* Center element with margin */
+    padding: 20px; /* Inner spacing */
+    border: 3px solid #555; /* Border size, style, color */
+    border-radius: 15px; /* Rounded corners */
+    box-sizing: border-box; /* Includes padding and border in width */
+    background-color: white; /* Background color */
+    opacity: 0.95; /* Transparency */
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+    font-size: 2.5rem; /* Font size */
+    font-weight: bold; /* Font thickness */
+    text-align: center; /* Text alignment */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: underline; /* Underlined text */
+    margin-bottom: 20px; /* Bottom margin */
+}
+
+/* ===== PARAGRAPH ===== */
+p {
+    font-size: 1rem; /* Text size */
+    text-align: justify; /* Justified text */
+    margin-bottom: 15px; /* Space below paragraph */
+}
+
+/* ===== POSITIONING ===== */
+.absolute-box {
+    position: absolute; /* Absolute positioning */
+    top: 20px; /* Distance from top */
+    right: 20px; /* Distance from right */
+    width: 150px; /* Box width */
+    height: 100px; /* Box height */
+    background-color: #f99; /* Background color */
+    z-index: 10; /* Stack order */
+    padding: 10px; /* Inner spacing */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* ===== FLEXBOX ===== */
+.flex-container {
+    display: flex; /* Enables flexbox */
+    flex-direction: row; /* Direction of items */
+    justify-content: space-around; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    flex-wrap: wrap; /* Allows wrapping */
+    gap: 10px; /* Space between items */
+    margin-bottom: 20px; /* Space below */
+}
+
+.flex-item {
+    flex: 1 1 150px; /* Flex grow, shrink, basis */
+    background-color: #9f9; /* Background color */
+    padding: 20px; /* Inner spacing */
+    text-align: center; /* Center text */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* ===== GRID ===== */
+.grid-container {
+    display: grid; /* Enables grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: 100px 100px; /* Row heights */
+    gap: 10px; /* Space between grid items */
+    margin-bottom: 20px; /* Space below grid */
+}
+
+.grid-item {
+    background-color: #99f; /* Background color */
+    display: flex; /* Flex inside grid */
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* ===== BUTTON & ANIMATION ===== */
+.button {
+    padding: 10px 20px; /* Inner spacing */
+    background-color: #f5a623; /* Button color */
+    border: none; /* Removes border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: all 0.5s ease; /* Smooth transition */
+}
+
+.button:hover {
+    transform: scale(1.2) rotate(5deg); /* Scale and rotate */
+    background-color: #f57c00; /* Change color on hover */
+    color: white; /* Text color on hover */
+}
+
+/* ===== OVERFLOW ===== */
+.scroll-box {
+    width: 100%; /* Full width */
+    height: 80px; /* Fixed height */
+    overflow: auto; /* Scroll if content overflows */
+    background-color: #eee; /* Background color */
+    padding: 10px; /* Inner spacing */
+    margin-bottom: 20px; /* Space below */
+    cursor: pointer; /* Cursor style */
+}
+
+/* ===== VISIBILITY ===== */
+.hidden-box {
+    width: 100%; /* Full width */
+    height: 50px; /* Fixed height */
+    background-color: #ccc; /* Background color */
+    visibility: hidden; /* Element invisible */
+}
+
+/* ===== FLOAT & CLEAR ===== */
+.float-box {
+    float: left; /* Float element to left */
+    width: 100px; /* Width */
+    height: 100px; /* Height */
+    background-color: #fc0; /* Background color */
+    margin-right: 10px; /* Space on right */
+}
+
+/* Clear floated elements */
+.clearfix::after {
+    content: ""; /* Empty content */
+    display: table; /* Table display */
+    clear: both; /* Clears float */
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>CSS Demo Page</h1>
+
+    <div class="absolute-box">Absolute</div>
+
+    <div class="flex-container">
+        <div class="flex-item">Flex 1</div>
+        <div class="flex-item">Flex 2</div>
+        <div class="flex-item">Flex 3</div>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item">Grid 1</div>
+        <div class="grid-item">Grid 2</div>
+        <div class="grid-item">Grid 3</div>
+        <div class="grid-item">Grid 4</div>
+        <div class="grid-item">Grid 5</div>
+        <div class="grid-item">Grid 6</div>
+    </div>
+
+    <button class="button">Hover me</button>
+
+    <div class="scroll-box">
+        This box demonstrates overflow property.
+    </div>
+
+    <div class="hidden-box"></div>
+
+    <div class="clearfix">
+        <div class="float-box"></div>
+        <p>This text flows around the floated element.</p>
+    </div>
+</div>
+
+</body>
+</html>
