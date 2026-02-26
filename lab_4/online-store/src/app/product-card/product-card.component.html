@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="gallery-main">
+    <button class="nav-arrow prev" 
+            [disabled]="!hasPrev()" 
+            (click)="prev()">←</button>
+
+    <img [src]="mainImage()" 
+         [alt]="product().name" 
+         class="main-img" />
+
+    <button class="nav-arrow next" 
+            [disabled]="!hasNext()" 
+            (click)="next()">→</button>
+  </div>
+
+  <div class="thumbnails" *ngIf="product().images.length > 1">
+    @for (img of product().images; track img; let i = $index) {
+      <img [src]="img"
+           [alt]="'Фото ' + (i + 1)"
+           class="thumbnail"
+           [class.active]="i === currentIndex()"
+           (click)="selectImage(i)" />
+    }
+  </div>
+
+  <div class="content">
+    <h3>{{ product().name }}</h3>
+    <p class="description">{{ product().description }}</p>
+
+    <div class="price-rating">
+      <span class="price">{{ product().price | number:'1.0-0' }} ₸</span>
+      <span class="rating">★ {{ product().rating }}</span>
+    </div>
+
+    <div class="actions">
+      <a [href]="product().link" target="_blank" class="btn view">Смотреть на Kaspi</a>
+      <button class="btn share" (click)="shareOnWhatsApp()">Поделиться в WhatsApp</button>
+    </div>
+  </div>
+</div>
